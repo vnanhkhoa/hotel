@@ -1,0 +1,27 @@
+<main class="mainbg">
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="uppercase ml-5 pg-bt-50">các loại phòng</h1>
+    </div>
+    <div class="rooms-list">
+      <div class="row">
+        <% categories.forEach(function(category) {%>
+          <div class="col-xl-4 mg-top-20">
+          <div class="box-rooms">
+          <div class="card">
+          <img src="/assets/images/<%- category.hinhanh %>" class="card-img-top">
+          <div class="info">
+          <a title="Superior Room" href="Superiorroom.html"><h4><%- category.tendm  %></h4></a>
+          <div> 
+          <%- category.ndbeg %>
+          </div>
+          <a href="/home/rooms/<%= category._id %>" class="btn btn-light">Xem chi tiết phòng</a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </main>

@@ -1,0 +1,167 @@
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+var socket = io();
+$(document).ready(function() {
+  var iddm = $('#validationout').attr('iddm');
+  socket.on('send-room',(data) => {
+    if (data.length > 0) {
+      var c = null;
+      data.forEach((item) => {
+        c = c + '<option value="'+item+'">'+item+'</option>';
+      })
+      $('#validationRoom').html(c)
+    }
+    else {
+      window.alert('Het Phong Vui Long Chon Ngay Khac');
+    }
+  });
+  socket.emit('send-id-room', $('#validationout').attr('iddm'));
+  socket.on('error-in-room',() => {
+    window.alert('Phong Day Vui Long Quay Lai Sau 5 Phut');
+    window.location.assign(location.protocol+'//'+location.hostname+':'+location.port+'/')
+  })
+  $("button[name='btnsend']").click(() => {
+    var forms = $('.needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      if (form.checkValidity() === false) {
+        forms.addClass('was-validated');
+      }
+      else {
+        socket.emit('check', {
+          fullname: $('#validationFullName').val(),
+          gender: $('#validationgt').val(),
+          email: $('#validationEmail').val(),
+          idcard: $('#validationidCard').val(),
+          country: $('#validationCountry').val(),
+          datein: $('#validationin').val(),
+          dateout: $("#validationout").val(),
+          room: $('#validationRoom').val().toString(),
+          id_category: iddm
+        });
+      }
+    });
+  })
+  socket.on('notification',() => {
+     socket.emit('check-room',{
+        datein: $('#validationin').val(),
+        dateout: $("#validationout").val(),
+        iddm: iddm
+      })
+  })
+  socket.on('ans', (data) => {
+    if (data == true) {
+      alert('Dat Phong Thanh Cong');
+      window.location.assign(location.protocol+'//'+location.hostname+':'+location.port+'/')
+    }
+    else {
+      alert('Dat Phong That Bai');
+    }
+  })
+  $('.alert').hide();
+  $('#validationout').datepicker({
+    format: 'yyyy-MM-dd',
+    startDate: '-3d',
+    locale: 'en',
+    autoHide: true
+
+  });
+  $('#validationin').datepicker({
+    format: 'yyyy-MM-dd',
+    startDate: '-3d',
+    autoHide: true
+  });
+  $('#validationout').change(function(event) {
+    var dateout = $(this).val();
+    var iddm = $(this).attr('iddm');
+    var datein = $("#validationin").val();
+    if (datein.trim() == "" ) {
+      $('.alert').text("Vui Lòng Chọn Ngày Dat");
+      $('.alert').show();
+    } else {
+      socket.emit('check-room',{
+        datein: datein,
+        dateout: dateout,
+        iddm: iddm
+      })
+    }
+  });
+});
+</script>
+<main style="background-color: #f2f2f2;">
+  <div class="container mainroom">
+   <h1>Liên Hệ Đặt Phòng</h1>
+   <form method="POST" class="needs-validation" novalidate>
+     <div class="row">
+      <div class="col-xl-5" >
+        <div class="alert alert-danger"></div>
+        <label for="validationFullName">Họ và tên : <sup>*</sup></label>
+        <input type="text" name="fullname" id="validationFullName" class="form-control" required>
+        <div class="invalid-feedback">
+          Please Choose A Username.
+        </div>
+        <div class="form-group">
+          <label for="validationgt">Giới tính : <sup>*</sup></label>
+          <select id="validationgt" name="gender" class="custom-select" required>
+            <option value=""></option>
+            <option value="Nam" >Nam</option>
+            <option value="Nữ" >Nữ</option>
+          </select>
+          <div class="invalid-feedback">
+            Please Choose A Gender.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <label for="validationin">Ngày đặt : <sup>*</sup></label>
+
+          </div>
+          <div class="col-xl-6">
+            <label for="validationout">Ngày trả : <sup>*</sup></label>
+          </div>
+        </div>
+        <div class="row">
+         <div class="col-xl-6">
+           <input type="date" id="validationin" class="form-control" name="in" required>
+           <div class="invalid-feedback">
+            Please Choose A Date Put.
+          </div>
+        </div>
+        <div class="col-xl-6">
+         <input type="date" id="validationout" class="form-control" name="out" iddm="<%- id %>" required>
+         <div class="invalid-feedback">
+          Please Choose A Date Pay.
+        </div>
+      </div>
+    </div>
+    <label for="validationRoom">Phòng : <sup>*</sup></label>
+    <select  id="validationRoom" name="room" class="form-control" required multiple="">
+      <option value=""></option>
+    </select>
+    <div class="invalid-feedback">
+      Please Choose A Room.
+    </div>
+  </div>
+  <div class="col-xl-2"></div>
+  <div class="col-xl-5">
+    <label for="validationidCard">Chứng minh thư : <sup>*</sup></label>
+    <input type="number" id="validationidCard" name="cmnd" class="form-control" required>
+    <div class="invalid-feedback">
+      Please Enter A ID Card.
+    </div>
+    <label for="validationEmail">Email : <sup>*</sup></label>
+    <input type="email" id="validationEmail" name="email" class="form-control" required>
+    <div class="invalid-feedback">
+      Please Enter A Email.
+    </div>
+    <label for="validationCountry">Quốc gia : <sup>*</sup></label>
+    <input type="text" id="validationCountry" name="country" class="form-control" required>
+    <div class="invalid-feedback">
+      Please Enter A Country.
+    </div>
+    <button type="button" class="btnsend btn btn-warning" name="btnsend" id="btnSubmit">Đặt Phòng</button>
+  </div>
+
+</div>
+</form>
+</div>
+</main>

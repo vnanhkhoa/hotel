@@ -1,0 +1,251 @@
+*body{
+	margin: 0;
+	padding: 0;
+}
+.mainbg{
+	background-color: rgb(221, 221, 221, 1.1);   background-image: repeating-linear-gradient(120deg, rgba(255,255,255,.1), 
+  rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px), 
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px), 
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)), 
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));   background-size: 70px 120px;
+
+}
+.mainbg h1{
+	font-size: 40px;
+	font-family: 'Lobster', cursive;
+	color: #4d4d4d;
+}
+.pg-bt-50{
+	padding: 50px 0;
+}
+.mg-top-20{
+	margin-top: 20px;
+}
+.mg-bottom-50{
+	margin-bottom: 50px;
+}
+.rooms-list{
+	padding: 20px 0;
+	border-top: 1px solid black;
+}
+.box-rooms img{
+	width: 100%;
+}
+.box-rooms a h4{
+	width: 70%;
+	color: #333333;
+	font-family: "Futural Book";
+	text-transform: uppercase;
+	border-bottom: 6px solid #333333;
+	margin-bottom: 50px;
+	padding: 13px 0;
+}
+.box-rooms a:hover{
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+}
+.box-rooms .info{
+	background: rgb(221, 221, 221, 1.1) none repeat scroll 0 0;
+    padding: 15px;
+    position: relative;
+    border: 1px solid #dcdcdc;
+    min-height: 190px;
+}
+.box-rooms .btn{
+	color: #fff;
+	background-color: #c29e40;
+    width: 100%;
+    margin-top: 10px;
+    text-transform: uppercase;
+    bottom: 15px;
+    border-color: white !important;
+}
+.mainres {
+  padding-top: 5%;
+  background-size: cover;
+  font-family:Arial;
+  display:block;
+  margin:0 auto;
+}
+.mainres img{
+	width: 100%;
+	height: 100%;
+}
+.mainres h1{
+	font-family: 'Lobster';
+	font-size: 50px;
+}
+.mainres p{
+	font-size: 17px;
+	text-shadow: black 0 0 5px;
+}
+.action{
+  display:block;
+  margin:100px auto;
+  width:100%;
+  text-align:center;
+}
+.action a {
+  display:inline-block;
+  padding:5px 10px; 
+  background:#f30;
+  color:#fff;
+  text-decoration:none;
+}
+.action a:hover{
+  background:#000;
+}
+.slick-next{
+	margin-right: 10px;
+}
+.mainspa{
+    background-color: #f2f2f2;
+    padding:2%; 
+    position: relative;
+    display: block;
+}
+.mainspa h1{
+    font-size: 40px;
+  font-family: 'Lobster', cursive;
+  text-shadow: grey 0 0 5px;
+}
+.linebor{
+  width: 9%;
+	display: inline-block;
+  position: relative;
+  vertical-align: middle;
+	border-bottom: 1px solid black;
+}
+.lineser{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    margin: 0 10px 0 10px;
+}
+.spainfo{
+  text-align: center;
+  position: relative;
+  display: block;
+  padding: 40px;
+}
+.spainfo p{
+  color: #666666;
+}
+.spainfo a{
+  color: #666666;
+  border-bottom: 1px solid black;
+}
+.para{
+    background-image: none;
+    height: 70vh;
+    margin-bottom: 20px;
+    z-index: 0;
+    background-attachment: scroll;
+    background-size: auto;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.jaxa{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 0;
+    clip: rect(0 1423px 450px 0);
+    clip: rect(0, 1423px, 450px, 0);
+}
+.bgjaxa{
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(http://themegoodsthemes-pzbycso8wng.stackpathdns.com/grandspa/demo/wp-content/uploads/2017/06/slice-1.jpg);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    margin-left: 0px;
+    margin-top: -23.3451px;
+    visibility: visible;
+    transform: translateY(52.4672px) translateZ(0px);
+}
+.mainroom {
+  padding-top: 5%;
+  background-size: cover;
+  font-family:Arial;
+  display:block;
+  margin:0 auto;
+}
+.mainroom img{
+  width: 100%;
+  height: 100%;
+}
+.mainroom h1{
+  font-family: 'Lobster';
+  font-size: 50px;
+}
+.mainroom p{
+  font-size: 17px;
+}
+.mainroom ul{
+  position: relative;
+  padding: 0 10%;
+  margin-bottom: 5%;
+}
+.mainroom ul li{
+    list-style-type: disc;
+}
+.mainroom .slider-nav img{
+  padding: 0 5px;
+}
+.mainroom .btnbook{
+  display: inline-block;
+  padding: 1.5%;
+  background-color:#333333;
+  color: white;
+  border: solid;
+  border-radius: 10px;
+  margin: 0 10%;
+  margin-bottom: 7%;
+}
+.mainroom .btnbook a{
+  text-decoration: none;
+  color: #fff;
+}
+.mainroom .btnbook:hover{
+  background-color: #e68a00;
+}
+.mainroom label{
+  padding: 5% 1%;
+}
+.mainroom .btnsend{
+  padding: 3% 10%;
+  margin: 15% 7%;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #FFF;
+}
+.mainroom .btnsend:hover{
+  color: white;
+  text-shadow: white 0 0 10px;
+}
+@media only screen and (max-width: 360px){
+	.mainres .slider-nav img{ height: 100px; }
+  .inner{ margin-left: 25%; }
+}	
+@media screen and (max-width: 480px){
+	.rooms-list{padding: 0;}
+	.slider-nav img{ height: 100px; }
+  .inner{ margin-left: 22%; }
+}
+@media screen and (max-width: 1120px){
+    .para{ height: 50vh; }
+}

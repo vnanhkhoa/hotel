@@ -1,0 +1,123 @@
+<div class="container mainroom">
+  <div class="row">
+    <div class="col-xl-9">
+      <h1><%- categories.tendm  %></h1>
+      <div class="slider slider-for">
+        <div><img src="/assets/images/typeroom12.jpg"></div>
+        <div><img src="/assets/images/typeroom2.jpg"></div>
+        <div><img src="/assets/images/typeroom3.jpg"></div>
+        <div><img src="/assets/images/typeroom4.jpg"></div>
+        <div><img src="/assets/images/typeroom5.jpg"></div>
+        <div><img src="/assets/images/typeroom6.jpg"></div>
+        <div><img src="/assets/images/typeroom7.jpg"></div>
+        <div><img src="/assets/images/typeroom8.jpg"></div>
+        <div><img src="/assets/images/typeroom9.jpg"></div>
+        <div><img src="/assets/images/typeroom10.jpg"></div>
+        <div><img src="/assets/images/typeroom11.jpg"></div>
+        <div><img src="/assets/images/typeroom1.jpg"></div>
+      </div>
+      <div class="row slider slider-nav">
+        <div><img src="/assets/images/typeroom12.jpg"></div>
+        <div><img src="/assets/images/typeroom2.jpg"></div>
+        <div><img src="/assets/images/typeroom3.jpg"></div>
+        <div><img src="/assets/images/typeroom4.jpg"></div>
+        <div><img src="/assets/images/typeroom5.jpg"></div>
+        <div><img src="/assets/images/typeroom6.jpg"></div>
+        <div><img src="/assets/images/typeroom7.jpg"></div>
+        <div><img src="/assets/images/typeroom8.jpg"></div>
+        <div><img src="/assets/images/typeroom9.jpg"></div>
+        <div><img src="/assets/images/typeroom10.jpg"></div>
+        <div><img src="/assets/images/typeroom11.jpg"></div>
+        <div><img src="/assets/images/typeroom1.jpg"></div>
+      </div>
+      <div class="text" style="margin-top: 10%;">
+        <%- categories.noidung %>
+      </div>
+      <div>
+        <% if (user) { %>
+        <button class="btnbook"><i class="fas fa-calendar-alt"></i><a href="/home/book/<%- categories._id %>"> Book Now</a></button>
+        <% } else { %>
+        <button class="btnbook"><i class="fas fa-calendar-alt"></i>
+          <a href="#" id="navbarDropdown" role="button" data-toggle="modal" data-target="#exampleModalCenter1">
+            Book Now
+          </a>
+        </button>
+        <% } %>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <form class="formbg" style="margin: 15% 0;">
+        <div class="form-header">
+          Đặt Phòng
+        </div>
+        <div class="form-main">
+          <div class="col-xl-12">
+            <div class="mg-top-10">
+              <label>Ngày Đặt*</label>
+              <input type="text" class="form-control" data-toggle="datepicker">
+            </div>
+            <div class="mg-top-10">
+              <label>Ngày Trả*</label>
+              <input type="text" class="form-control" data-toggle="datepicker">
+            </div>
+          </div>
+          <div class="mg-top-10 form-peo">
+            <div class="row">
+              <div class="col-xl-6 col-md-6 col-6">
+                <label class="control-label">Người lớn</label>
+                <div class="">
+                  <select class="form-control input-sm" id="adults" name="Adult">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-6 col-6">
+                <label class="control-label">Trẻ em</label>
+                <div class="">
+                  <select class="form-control input-sm" id="Chilren" name="Child">
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-xl-12 mg-top-10">
+            <input class="btn" id="cmdCheckHotel" name="cmdCheckHotel" type="submit" value="kiểm tra">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/assets/script/ScriptImg.js"></script>

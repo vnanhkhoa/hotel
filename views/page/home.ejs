@@ -1,0 +1,152 @@
+<script type="text/javascript">
+  $(document).ready(() => {
+    var x = $('.wel').attr('success');
+    if (x) {
+      alert(x);
+    };
+  })
+  
+</script>
+<div class="container wel" <% if (success) { %> success='<%- success %>' <% } %>>
+    <div class="row">
+      <div class="col-xl-9 wel">
+       <h1 class="color333 title uppercase mg-bottom-25">CHÀO MỪNG BẠN ĐẾN KHÁCH SẠN LUXURY!</h1>
+       <img src="assets/images/reception_30045183723_o.jpg">
+       <p>Luxury Hotel là một khách sạn sang trọng, đẳng cấp hàng đầu tại Vietnam Luxury Group. Đến với Luxury Hotel, bạn không chỉ được đắm mình trong cuộc sống vương giả với đầy đủ tiện nghi, dịch vụ chuyên nghiệp, chất lượng hàng đầu mà còn cảm nhận được không khí ấm cúng, thoải mái và dễ chịu như một gia đình ngay tại nhà. Luxury Hotel là một nơi an toàn, thân thiện cho mọi người khi ở Hà Nội. Tọa lạc tại một vị trí đặc quyền, ngay trung tâm thành phố, dễ dàng đến các điểm du lịch nổi tiếng, đây là một nơi tuyệt vời để ở. Đây cũng là một điểm đến lý tưởng nhờ dịch vụ cao cấp được cung cấp bởi khách sạn.</p>
+     </div>
+     <div class="col-xl-3">
+      <form class="formbg">
+        <div class="form-header">
+          Đặt Phòng
+        </div>
+        <div class="form-main">
+          <div class="col-xl-12">
+            <div class="mg-top-10">
+              <label>Ngày Đặt*</label>
+              <input type="text" class="form-control" data-toggle="datepicker">
+            </div>
+            <div class="mg-top-10">
+              <label>Ngày Trả*</label>
+              <input type="text" class="form-control" data-toggle="datepicker">
+            </div>
+          </div>
+        </div>
+        <div>
+         <div class="col-xl-12 mg-top-10">
+           <input class="btn" id="cmdCheckHotel" name="cmdCheckHotel" type="submit" value="kiểm tra" style="margin-top: 1rem">
+         </div>
+       </div>
+     </form>
+   </div>
+</div>
+</div>
+
+<div class="container-fluid roomlist">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <h1 class=" title text-center mg-bottom-25" style="color: #fff">ACCOMMODATION</h1>
+      </div>           
+    </div>
+
+    <div class="item-list clear-fix">
+      <div class="row">
+        <% categories.forEach(function(category) {%>
+        	<div class="col-xl-4 col-sm-4">
+            <div class="box-content box-shadow">
+              <div class="card">  
+                <img src="assets/images/<%- category.hinhanh %>" class="card-img-top" alt="...">
+                <div class="info">
+                  <a title="Deluxe Room" href=""><h4><%- category.tendm  %></h4></a>
+                  <div> 
+                    <%- category.ndbeg %>
+                  </div>
+                  <a href="/home/rooms/<%= category._id %>" class="btn">Xem chi tiết phòng</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container prestation">
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="service">
+        <h2 class="left title">DỊCH VỤ</h2>
+        <a href="" class="right">VIEW ALL..</a>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/service1.jpg" class="d-block w-100" alt="...">
+            <div class="offer-info">
+              <a href=""><h5>spa</h5></a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/service2.jpg" class="d-block w-100" alt="...">
+            <div class="offer-info">
+              <a href=""><h5>restaurant</h5></a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="row service">
+        <h2 class="title uppercase left ml-3">ƯU ĐÃI</h2>
+        <a href="" class="title uppercase mg-top-10 right">view all..</a>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 pg-15">
+          <div class="img-box media-box">
+            <a href=""><img src="assets/images/offer1.jpg"></a>
+            <div class="pro-info">
+              <a href=""><h5>khuyến mãi hè 2019</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 pg-15">
+          <div class="img-box media-box">
+            <a href=""><img src="assets/images/offer2.jpg"></a>
+            <div class="pro-info">
+              <a href=""><h5>khuyến mãi đặt phòng</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mg-top-19">
+        <div class="col-xl-6 pg-15">
+          <div class="img-box media-box">
+            <a href=""><img src="assets/images/offer3.jpg"></a>
+            <div class="pro-info">
+              <a href=""><h5>củng cố khuyến mãi</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 pg-15">
+          <div class="img-box media-box">
+            <a href=""><img src="assets/images/offer4.jpg"></a>
+            <div class="pro-info">
+              <a href=""><h5>khuyến mãi lớn</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
