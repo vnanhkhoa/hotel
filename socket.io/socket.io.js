@@ -14,11 +14,11 @@ module.exports = (http) => {
 				id_category: iddm,
 				$nor: [{
 					datein: {
-						$gte: new Date(dateout)
+						$gt: new Date(dateout)
 					}
 				}, {
 					dateout: {
-						$lte: new Date(datein),
+						$lt: new Date(datein),
 					}
 				}]
 			}, {
@@ -30,7 +30,7 @@ module.exports = (http) => {
 				for (var i = 0; i < room.length; i++) {
 					phong.push(room[i].room)
 				};
-				console.log(iddm);
+				console.log(room);
 				Category.findOne({
 					_id: iddm
 				}, {
